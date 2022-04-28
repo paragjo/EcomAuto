@@ -6,15 +6,15 @@
 URL: http://automationpractice.com/index.php]]>
     </line>
     <line>
-      <![CDATA[Buy Product Test passed]]>
+      <![CDATA[User Yeda Anna logged in Successfully]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-04-25T16:52:20 IST" name="Default suite" finished-at="2022-04-25T16:53:11 IST" duration-ms="50450">
+  <suite started-at="2022-04-27T18:28:01 IST" name="Default suite" finished-at="2022-04-27T18:28:24 IST" duration-ms="22805">
     <groups>
     </groups>
-    <test started-at="2022-04-25T16:52:20 IST" name="Default test" finished-at="2022-04-25T16:53:11 IST" duration-ms="50450">
+    <test started-at="2022-04-27T18:28:01 IST" name="Default test" finished-at="2022-04-27T18:28:24 IST" duration-ms="22805">
       <class name="tc.TestCases">
-        <test-method is-config="true" signature="start()[pri:0, instance:tc.TestCases@d5b810e]" started-at="2022-04-25T16:52:20 IST" name="start" finished-at="2022-04-25T16:52:30 IST" duration-ms="10151" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:tc.TestCases@d5b810e]" started-at="2022-04-27T18:28:01 IST" name="start" finished-at="2022-04-27T18:28:15 IST" duration-ms="13496" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Navigated to browser:chrome
@@ -22,14 +22,14 @@ URL: http://automationpractice.com/index.php]]>
             </line>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method signature="tc06_buyProduct()[pri:0, instance:tc.TestCases@d5b810e]" started-at="2022-04-25T16:52:30 IST" name="tc06_buyProduct" finished-at="2022-04-25T16:53:10 IST" duration-ms="39863" status="PASS">
+        <test-method signature="tc02_verifySignIn()[pri:0, instance:tc.TestCases@d5b810e]" started-at="2022-04-27T18:28:15 IST" name="tc02_verifySignIn" finished-at="2022-04-27T18:28:23 IST" duration-ms="8202" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Buy Product Test passed]]>
+              <![CDATA[User Yeda Anna logged in Successfully]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tc06_buyProduct -->
-        <test-method is-config="true" signature="end()[pri:0, instance:tc.TestCases@d5b810e]" started-at="2022-04-25T16:53:10 IST" name="end" finished-at="2022-04-25T16:53:11 IST" duration-ms="364" status="PASS">
+        </test-method> <!-- tc02_verifySignIn -->
+        <test-method is-config="true" signature="end()[pri:0, instance:tc.TestCases@d5b810e]" started-at="2022-04-27T18:28:23 IST" name="end" finished-at="2022-04-27T18:28:24 IST" duration-ms="1023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->

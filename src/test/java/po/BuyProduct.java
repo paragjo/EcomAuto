@@ -4,20 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.Reporter;
 
-public class VerifyBuyProduct {
+public class BuyProduct {
 WebDriver driver;
 	
-	public VerifyBuyProduct(WebDriver driver) {
+	public BuyProduct(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	By emailId = By.id("email");
-	By password = By.id("passwd");
-	By loginBtn = By.id("SubmitLogin");
-	By logoutBtn = By.className("logout");
+	
 	By women = By.linkText("WOMEN");
 	By printedDress = By.xpath("//*[@id=\"center_column\"]/ul/li[3]/div/div[1]/div/a[1]/img");
 	By more = By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/ul/li[3]/div/div[2]/div[2]/a[2]/span");
@@ -33,15 +28,9 @@ WebDriver driver;
 	By pay  = By.xpath("//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a");
 	By orderConfirmBtn = By.xpath("//*[@id=\"cart_navigation\"]/button");
 	By lastStep = By.xpath("//*[@id=\"center_column\"]/div/p");
-	String expected = "Your order on My Store is complete.";
 	
-	public void buyProduct(String email, String pwd) {
-		driver.findElement(By.className("login")).click();
-
-		driver.findElement(emailId).sendKeys(email);
-		driver.findElement(password).sendKeys(pwd);
-		driver.findElement(loginBtn).click();
-		System.out.println("Logged In");
+	public String buyProduct() {
+		
 		driver.findElement(women).click();
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(printedDress)).moveToElement(driver.findElement(more)).click().build().perform();
@@ -58,10 +47,8 @@ WebDriver driver;
 		driver.findElement(pay).click();
 		driver.findElement(orderConfirmBtn).click();
 		String actual = driver.findElement(lastStep).getText();
-		Assert.assertEquals(actual, expected, "Order not completed. Reason:"+actual);
-		Reporter.log("Buy Product Test passed", true);
-		driver.findElement(logoutBtn).click();
-		
+		return actual;
+			
 	}
 
 }

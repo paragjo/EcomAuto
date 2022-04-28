@@ -1,17 +1,17 @@
 package po;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
-import org.testng.Reporter;
 
-public class VerifySearchProduct {
+
+public class SearchProduct {
 WebDriver driver;
 	
-	public VerifySearchProduct(WebDriver driver) {
+	public SearchProduct(WebDriver driver) {
 		this.driver = driver;
 	}
 	By women = By.linkText("WOMEN");
@@ -23,17 +23,18 @@ WebDriver driver;
 	
 	public void searchVerify() {
 		Actions act = new Actions(driver);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		act.moveToElement(driver.findElement(women)).moveToElement(driver.findElement(tshirts)).click().build().perform();
-		
+	}
+	public String firstProduct() {
 		String fpName = driver.findElement(firstProd).getText();
 		driver.findElement(searchBox).sendKeys(fpName);
 		driver.findElement(searchBtn).click();
-		
+		return fpName;
+	}
+	public String searchedProduct() {
 		String spName = driver.findElement(searchedProd).getText();
-		Assert.assertEquals(fpName, spName, "Same product not found");
-		Reporter.log("Validated the searched and first product", true);
-		
+		return spName;		
 	}
 
 

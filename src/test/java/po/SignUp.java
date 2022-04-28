@@ -3,13 +3,11 @@ package po;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.Reporter;
 
-public class VerifySignUp {
+public class SignUp {
 	WebDriver driver;
 	
-	public VerifySignUp(WebDriver driver) {
+	public SignUp(WebDriver driver) {
 		this.driver = driver;
 	}
 	By signin = By.className("login");
@@ -48,17 +46,6 @@ public class VerifySignUp {
 		driver.findElement(mobile).sendKeys(mob);
 		driver.findElement(submitBtn).click();
 		
-		String actual = driver.getTitle();
-		String expected = "My account - My Store";
-		if(actual.equalsIgnoreCase(expected)) {
-		Assert.assertTrue(true);
-		String user = driver.findElement(By.className("account")).getText();
-		Reporter.log("User Account Created for " + user, true);
-		}
-		else {
-			String error= driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/p")).getText();		
-			Assert.assertTrue(true,error);
-		}
 		
 		
 	}
